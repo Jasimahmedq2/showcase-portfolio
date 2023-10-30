@@ -1,7 +1,8 @@
-import AboutTabs from "@/components/pagesComponents/AboutTabs";
 import About from "@/components/pagesComponents/HomePage/About";
 import Banner from "@/components/pagesComponents/HomePage/Banner";
+import Contact from "@/components/pagesComponents/HomePage/Contact";
 import Projects from "@/components/pagesComponents/HomePage/projects";
+import { Toaster } from "@/components/ui/toaster";
 
 const HomePage = () => {
   return (
@@ -15,6 +16,10 @@ const HomePage = () => {
       <div>
         <Projects />
       </div>
+      <div>
+        <Contact />
+      </div>
+      <Toaster />
     </div>
   );
 };

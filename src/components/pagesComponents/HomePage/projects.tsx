@@ -10,7 +10,7 @@ import github from "../../../assets/github-sign.png";
 import live from "../../../assets/eye.png";
 const Projects = () => {
   return (
-    <div className="pt-8 min-h-screen sm:pt-12 sm:pl-12 pl-4">
+    <div className="pt-8 pb-6 sm:pt-12 sm:pl-12 pl-4">
       <h1 className="text-2xl sm:text-6xl font-bold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text uppercase">
         Recent Projects
       </h1>
