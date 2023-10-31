@@ -1,52 +1,44 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { useToast } from "@/components/ui/use-toast";
-import { useRef } from "react";
-
-type ISendEmail = {
-  name: string;
-  description: string;
-  email: string;
-};
+import { RefObject, useRef, FormEvent } from "react";
 
 const Contact = () => {
   const { toast } = useToast();
-  const form = useRef();
-  //   const {
-  //     register,
-  //     reset,
-  //     handleSubmit,
-  //     formState: { errors },
-  //   } = useForm<ISendEmail>();
+  const form = useRef<HTMLFormElement | null>(
+    null
+  ) as RefObject<HTMLFormElement>;
 
-  const handleEmailSend = (e) => {
+  const handleEmailSend = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    emailjs
-      .sendForm(
-        "service_k0ndvhj",
-        "template_ydc029l",
-        form.current,
-        "YgRulTmORe8ZYcETe"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          toast({
-            title: "email sent",
-            description: `${result?.text}`,
-          });
-          console.log({ result });
-        },
-        (error) => {
-          toast({
-            title: "error",
-            description: `${error?.text}`,
-          });
-        }
-      );
-    e.target.reset();
+    if (form.current) {
+      emailjs
+        .sendForm(
+          "service_k0ndvhj",
+          "template_ydc029l",
+          form.current,
+          "YgRulTmORe8ZYcETe"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            toast({
+              title: "email sent",
+              description: `${result?.text}`,
+            });
+            console.log({ result });
+          },
+          (error) => {
+            toast({
+              title: "error",
+              description: `${error?.text}`,
+            });
+          }
+        );
+    }
+    e.currentTarget.reset();
   };
+
   return (
     <div id="contact" className="relative mt-12 ">
       <img
