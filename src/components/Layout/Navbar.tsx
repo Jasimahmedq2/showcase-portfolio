@@ -1,54 +1,94 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import * as scroll from "react-scroll";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const [navbarBackground, setNavbarBackground] = useState("");
+  console.log(navbarBackground);
+
+  useEffect(() => {
+    // Add an event listener to track scroll position
+    const handleScroll = () => {
+      if (window.scrollY >= 100) {
+        setNavbarBackground("bg-gray-700"); // Change to your desired background color class
+      } else {
+        setNavbarBackground(""); // Reset the background color
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-      <div className="relative flex items-center justify-between">
-        <ul className="sm:flex items-center absolute pt-10 right-10 hidden space-x-8 lg:flex">
+    <div
+      className={`px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 sticky top-0 z-20  `}
+    >
+      <div className={`relative flex items-center justify-between `}>
+        <ul
+          className={`sm:flex items-center absolute pt-10 right-10 hidden space-x-8 lg:flex  `}
+        >
           <li>
-            <Link
-              to="/"
-              aria-label="Our product"
-              title="Our product"
-              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600"
+            <scroll.Link
+              to="home"
+              spy={true}
+              smooth={true}
+              hashSpy={true}
+              offset={50}
+              duration={500}
+              delay={1000}
+              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600 cursor-pointer"
             >
-              Product
-            </Link>
+              Home
+            </scroll.Link>
           </li>
           <li>
-            <Link
-              to="/"
-              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600"
+            <scroll.Link
+              to="about"
+              spy={true}
+              smooth={true}
+              hashSpy={true}
+              offset={50}
+              duration={500}
+              delay={1000}
+              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600 cursor-pointer"
             >
-              Features
-            </Link>
+              About
+            </scroll.Link>
           </li>
           <li>
-            <Link
-              to="/"
-              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600"
+            <scroll.Link
+              to="project"
+              spy={true}
+              smooth={true}
+              hashSpy={true}
+              offset={50}
+              duration={500}
+              delay={1000}
+              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600 cursor-pointer"
             >
-              Pricing
-            </Link>
+              Projects
+            </scroll.Link>
           </li>
           <li>
-            <Link
-              to="/"
-              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600"
+            <scroll.Link
+              to="contact"
+              spy={true}
+              smooth={true}
+              hashSpy={true}
+              offset={50}
+              duration={500}
+              delay={1000}
+              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600 cursor-pointer"
             >
-              About us
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/"
-              className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-[#631eff] hover:bg-[#631eff] focus:shadow-outline focus:outline-none"
-            >
-              Sign up
-            </Link>
+              Contact
+            </scroll.Link>
           </li>
         </ul>
         <div className="lg:hidden">
@@ -147,16 +187,6 @@ export const Navbar = () => {
                         className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600"
                       >
                         About us
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/"
-                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-[#631eff] hover:bg-[#631eff] focus:shadow-outline focus:outline-none"
-                        aria-label="Sign up"
-                        title="Sign up"
-                      >
-                        Sign up
                       </Link>
                     </li>
                   </ul>

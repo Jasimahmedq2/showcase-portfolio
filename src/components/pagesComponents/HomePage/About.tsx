@@ -106,7 +106,10 @@ const About = () => {
   });
 
   return (
-    <div className="sm:pt-12 pt-8 pl-4 sm:pl-8  sm:min-h-[800px]">
+    <div
+      id="about"
+      className="sm:pt-12 pt-8 pl-4 sm:pl-8 pr-4  sm:min-h-[800px]"
+    >
       <h1 className="text-2xl sm:text-6xl font-bold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text uppercase">
         About Me
       </h1>
