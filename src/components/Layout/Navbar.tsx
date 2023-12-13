@@ -30,7 +30,7 @@ export const Navbar = () => {
     <div
       className={`px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 sticky top-0 z-20  `}
     >
-      <div className={`relative flex items-center justify-between `}>
+      <div className={`relative flex items-center justify-between`}>
         <ul
           className={`sm:flex items-center absolute pt-10 right-10 hidden space-x-8 lg:flex  `}
         >
@@ -115,7 +115,7 @@ export const Navbar = () => {
           </button>
           {isMenuOpen && (
             <div className="absolute top-0 left-0 w-full">
-              <div className="p-5 bg-white border rounded shadow-sm">
+              <div className="p-5 bg-gray-400 border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <Link to="/" className="inline-flex items-center">
@@ -135,7 +135,7 @@ export const Navbar = () => {
                         <rect x="14" y="11" width="7" height="12" />
                       </svg>
                       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                        Company
+                        JASIM AHMED
                       </span>
                     </Link>
                   </div>
@@ -157,38 +157,62 @@ export const Navbar = () => {
                 </div>
                 <nav>
                   <ul className="space-y-4">
-                    <li>
-                      <Link
-                        to="/"
-                        className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600"
-                      >
-                        Product
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/"
-                        className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600"
-                      >
-                        Features
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/"
-                        className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600"
-                      >
-                        Pricing
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/"
-                        className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600"
-                      >
-                        About us
-                      </Link>
-                    </li>
+                  <li>
+            <scroll.Link
+              to="home"
+              spy={true}
+              smooth={true}
+              hashSpy={true}
+              offset={50}
+              duration={500}
+              delay={1000}
+              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600 cursor-pointer"
+            >
+              Home
+            </scroll.Link>
+          </li>
+          <li>
+            <scroll.Link
+              to="about"
+              spy={true}
+              smooth={true}
+              hashSpy={true}
+              offset={50}
+              duration={500}
+              delay={1000}
+              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600 cursor-pointer"
+            >
+              About
+            </scroll.Link>
+          </li>
+          <li>
+            <scroll.Link
+              to="project"
+              spy={true}
+              smooth={true}
+              hashSpy={true}
+              offset={50}
+              duration={500}
+              delay={1000}
+              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600 cursor-pointer"
+            >
+              Projects
+            </scroll.Link>
+          </li>
+          <li>
+            <scroll.Link
+              to="contact"
+              spy={true}
+              smooth={true}
+              hashSpy={true}
+              offset={50}
+              duration={500}
+              delay={1000}
+              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600 cursor-pointer"
+            >
+              Contact
+            </scroll.Link>
+          </li>
                   </ul>
                 </nav>
               </div>
