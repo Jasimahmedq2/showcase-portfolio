@@ -167,7 +167,7 @@ const About = () => {
             I specialize in leveraging the power of modern web technologies to
             craft engaging web applications
           </p>
-          <div className="pt-6">
+          <div className="pt-6 sm:h-80 ">
             <AboutTabs />
           </div>
         </div>

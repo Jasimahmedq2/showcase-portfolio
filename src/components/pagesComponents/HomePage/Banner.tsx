@@ -2,7 +2,8 @@ import { TypeAnimation } from "react-type-animation";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import backgroundImage from "../../../assets/banner_backround.png";
-import './Banner.css'
+import resume from "../../../assets/jasim-resume (2).pdf";
+import "./Banner.css";
 AOS.init();
 
 const Banner = () => {
@@ -47,17 +48,21 @@ const Banner = () => {
                 data-aos-easing="ease-in-out"
                 data-aos-mirror="true"
                 data-aos-once="false"
-                className="text-base text-white md:text-lg pt-4"
+                className="text-base text-white md:text-lg pt-8 lg:pt-16"
               >
-                Versatile Web Developer with expertise in both front-end and
-                back-end technologies. Proficient in creating dynamic,
-                responsive web applications using React, Next.js, Redux, and
-                TypeScript. Skilled in database management with PostgreSQL,
-                MongoDB, Prisma, and Mongoose. Proficient in Node.js and
-                Express.js for server-side development. Passionate about clean
-                code, user-friendly interfaces, and responsive design. Let's
-                turn your ideas into stunning, high-performance web solutions!
+                Seasoned Web Developer adept in crafting dynamic, responsive
+                applications with React, Next.js, and Redux, leveraging strong
+                back-end skills in Node.js, Express.js, and database management.
+                Committed to transforming concepts into exceptional,
+                high-performance web solutions.
               </p>
+            </div>
+            <div className="pt-6 lg-pt-12">
+              <a href={resume} download="jasim_resume">
+                <button className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition duration-300 ease-in-out">
+                  Download Resume
+                </button>
+              </a>
             </div>
           </div>
 

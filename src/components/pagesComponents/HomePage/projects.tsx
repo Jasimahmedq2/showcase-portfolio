@@ -9,11 +9,12 @@ import { EffectCoverflow, Pagination } from "swiper/modules";
 import github from "../../../assets/github-sign.png";
 import live from "../../../assets/eye.png";
 import { projectsData } from "./staticProject";
+import ProjectModal from "./ProjectModal";
 const Projects = () => {
   return (
     <div
       id="project"
-      className="pt-8 pb-6 sm:pt-12 sm:pl-8 pr-4 pl-4 mt-72 sm:mt-0"
+      className="pt-8 pb-6 sm:pt-16 sm:pl-8 pr-4 pl-4 mt-80 sm:mt-16"
     >
       <h1 className="text-2xl sm:text-6xl font-bold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text uppercase">
         Recent Projects
@@ -48,9 +49,18 @@ const Projects = () => {
                       />
                     </a>
                     <div className="p-6">
-                      <h5 className="mb-2 text-xl font-medium leading-tight  text-neutral-50">
-                        {project?.name}
-                      </h5>
+                      <div className="flex justify-between items-center">
+                        <h5 className="mb-2 text-xl font-medium leading-tight  text-neutral-50">
+                          {project?.name}
+                        </h5>
+                        {/* modal for project details */}
+                        <ProjectModal
+                          project={project}
+                          live={live}
+                          github={github}
+                        />
+                      </div>
+
                       <div className="flex items-center justify-around space-x-3 pt-3">
                         <a href={project?.live_link} target="_blank">
                           <div className="cursor-pointer">
