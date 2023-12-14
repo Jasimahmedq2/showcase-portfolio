@@ -4,6 +4,7 @@ import * as scroll from "react-scroll";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [selectItem, setSelectItem] = useState("home");
 
   const [navbarBackground, setNavbarBackground] = useState("");
   console.log(navbarBackground);
@@ -12,7 +13,7 @@ export const Navbar = () => {
     // Add an event listener to track scroll position
     const handleScroll = () => {
       if (window.scrollY >= 100) {
-        setNavbarBackground("bg-gray-700"); // Change to your desired background color class
+        setNavbarBackground("bg-[#252734]"); // Change to your desired background color class
       } else {
         setNavbarBackground(""); // Reset the background color
       }
@@ -28,11 +29,13 @@ export const Navbar = () => {
 
   return (
     <div
-      className={`px-4  mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 sticky top-0 z-20  `}
+      className={` mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl  sticky top-0 z-20  `}
     >
       <div className={`relative flex items-center justify-between`}>
         <ul
-          className={`sm:flex items-center absolute pt-10 right-10 hidden space-x-8 lg:flex  `}
+          className={`sm:flex w-full justify-end items-center absolute pt-20 hidden space-x-12 lg:flex p-6 ${
+            navbarBackground ? navbarBackground : ""
+          } `}
         >
           <li>
             <scroll.Link
@@ -43,7 +46,12 @@ export const Navbar = () => {
               offset={50}
               duration={500}
               delay={1000}
-              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600 cursor-pointer"
+              onClick={() => setSelectItem("home")}
+              className={`font-medium tracking-wide ${
+                selectItem === "home"
+                  ? "text-blue-400 border-blue-400 border-b p-2 "
+                  : "text-white"
+              } transition-colors duration-200 hover:text-gray-600 cursor-pointer`}
             >
               Home
             </scroll.Link>
@@ -57,7 +65,12 @@ export const Navbar = () => {
               offset={50}
               duration={500}
               delay={1000}
-              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600 cursor-pointer"
+              onClick={() => setSelectItem("about")}
+              className={`font-medium tracking-wide ${
+                selectItem === "about"
+                  ? "text-blue-400 border-blue-400 border-b p-2 "
+                  : "text-white"
+              } transition-colors duration-200 hover:text-gray-600 cursor-pointer`}
             >
               About
             </scroll.Link>
@@ -71,7 +84,12 @@ export const Navbar = () => {
               offset={50}
               duration={500}
               delay={1000}
-              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600 cursor-pointer"
+              onClick={() => setSelectItem("projects")}
+              className={`font-medium tracking-wide ${
+                selectItem === "projects"
+                  ? "text-blue-400 border-blue-400 border-b p-2 "
+                  : "text-white"
+              } transition-colors duration-200 hover:text-gray-600 cursor-pointer`}
             >
               Projects
             </scroll.Link>
@@ -85,7 +103,12 @@ export const Navbar = () => {
               offset={50}
               duration={500}
               delay={1000}
-              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600 cursor-pointer"
+              onClick={() => setSelectItem("contact")}
+              className={`font-medium tracking-wide ${
+                selectItem === "contact"
+                  ? "text-blue-400 border-blue-400 border-b p-2 "
+                  : "text-white"
+              } transition-colors duration-200 hover:text-gray-600 cursor-pointer`}
             >
               Contact
             </scroll.Link>
@@ -114,10 +137,10 @@ export const Navbar = () => {
             </svg>
           </button>
           {isMenuOpen && (
-            <div className="absolute top-0 left-0 w-full">
+            <div className="absolute  top-0 left-0 w-full">
               <div className="p-5 bg-gray-400 border rounded shadow-sm">
-                <div className="flex items-center justify-between mb-4">
-                  <div>
+                <div className="flex  items-center justify-between mb-4">
+                  <div className="">
                     <Link to="/" className="inline-flex items-center">
                       <svg
                         className="w-8 text-[#3a243b]"
@@ -157,62 +180,82 @@ export const Navbar = () => {
                 </div>
                 <nav>
                   <ul className="space-y-4">
-                  <li>
-            <scroll.Link
-              to="home"
-              spy={true}
-              smooth={true}
-              hashSpy={true}
-              offset={50}
-              duration={500}
-              delay={1000}
-              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600 cursor-pointer"
-            >
-              Home
-            </scroll.Link>
-          </li>
-          <li>
-            <scroll.Link
-              to="about"
-              spy={true}
-              smooth={true}
-              hashSpy={true}
-              offset={50}
-              duration={500}
-              delay={1000}
-              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600 cursor-pointer"
-            >
-              About
-            </scroll.Link>
-          </li>
-          <li>
-            <scroll.Link
-              to="project"
-              spy={true}
-              smooth={true}
-              hashSpy={true}
-              offset={50}
-              duration={500}
-              delay={1000}
-              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600 cursor-pointer"
-            >
-              Projects
-            </scroll.Link>
-          </li>
-          <li>
-            <scroll.Link
-              to="contact"
-              spy={true}
-              smooth={true}
-              hashSpy={true}
-              offset={50}
-              duration={500}
-              delay={1000}
-              className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-gray-600 cursor-pointer"
-            >
-              Contact
-            </scroll.Link>
-          </li>
+                    <li>
+                      <scroll.Link
+                        to="home"
+                        spy={true}
+                        smooth={true}
+                        hashSpy={true}
+                        offset={50}
+                        duration={500}
+                        delay={1000}
+                        onClick={() => setSelectItem("home")}
+                        className={`font-medium tracking-wide ${
+                          selectItem === "home"
+                            ? "text-blue-400 border-blue-400 border-b p-2 "
+                            : "text-white"
+                        } transition-colors duration-200 hover:text-gray-600 cursor-pointer`}
+                      >
+                        Home
+                      </scroll.Link>
+                    </li>
+                    <li>
+                      <scroll.Link
+                        to="about"
+                        spy={true}
+                        smooth={true}
+                        hashSpy={true}
+                        offset={50}
+                        duration={500}
+                        delay={1000}
+                        onClick={() => setSelectItem("about")}
+                        className={`font-medium tracking-wide ${
+                          selectItem === "about"
+                            ? "text-blue-400 border-blue-400 border-b p-2 "
+                            : "text-white"
+                        } transition-colors duration-200 hover:text-gray-600 cursor-pointer`}
+                      >
+                        About
+                      </scroll.Link>
+                    </li>
+                    <li>
+                      <scroll.Link
+                        to="project"
+                        spy={true}
+                        smooth={true}
+                        hashSpy={true}
+                        offset={50}
+                        duration={500}
+                        delay={1000}
+                        onClick={() => setSelectItem("projects")}
+                        className={`font-medium tracking-wide ${
+                          selectItem === "projects"
+                            ? "text-blue-400 border-blue-400 border-b p-2 "
+                            : "text-white"
+                        } transition-colors duration-200 hover:text-gray-600 cursor-pointer`}
+                      >
+                        Projects
+                      </scroll.Link>
+                    </li>
+                    <li>
+                      <scroll.Link
+                        to="contact"
+                        spy={true}
+                        smooth={true}
+                        hashSpy={true}
+                        offset={50}
+                        duration={500}
+                        delay={1000}
+                        onClick={() => setSelectItem("contact")}
+                        className={`font-medium tracking-wide ${
+                          selectItem === "contact"
+                            ? "text-blue-400 border-blue-400 border-b p-2 "
+                            : "text-white"
+                        } transition-colors duration-200 hover:text-gray-600 cursor-pointer`}
+                      >
+                        Contact
+                      </scroll.Link>
+                    </li>
                   </ul>
                 </nav>
               </div>

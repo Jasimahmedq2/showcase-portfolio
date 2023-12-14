@@ -42,7 +42,7 @@ const Projects = () => {
                   <div className="block rounded-lg shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] bg-neutral-700">
                     <a href={project?.live_link} target="_blank">
                       <img
-                        className="rounded-t-lg"
+                        className="rounded-t-lg max-h-52"
                         src={project?.image}
                         alt=""
                       />
@@ -64,28 +64,34 @@ const Projects = () => {
                             <p className="text-sm text-white pb-1">live</p>
                           </div>
                         </a>
-                        <a href={project?.frontend_code} target="_blank">
-                          <div className="cursor-pointer">
-                            <img
-                              className="w-1/2 mx-auto"
-                              style={{ width: "24px", height: "24px" }}
-                              src={github}
-                              alt=""
-                            />
-                            <p className="text-sm text-white pb-1">backend</p>
-                          </div>
-                        </a>
-                        <a href={project?.backend_code} target="_blank">
-                          <div className="cursor-pointer">
-                            <img
-                              className="w-1/2 mx-auto"
-                              style={{ width: "24px", height: "24px" }}
-                              src={github}
-                              alt=""
-                            />
-                            <p className="text-sm text-white pb-1">backend</p>
-                          </div>
-                        </a>
+                        {project?.frontend_code && (
+                          <a href={project?.frontend_code} target="_blank">
+                            <div className="cursor-pointer">
+                              <img
+                                className="w-1/2 mx-auto"
+                                style={{ width: "24px", height: "24px" }}
+                                src={github}
+                                alt=""
+                              />
+                              <p className="text-sm text-white pb-1">
+                                frontend
+                              </p>
+                            </div>
+                          </a>
+                        )}
+                        {project?.backend_code && (
+                          <a href={project?.backend_code} target="_blank">
+                            <div className="cursor-pointer">
+                              <img
+                                className="w-1/2 mx-auto"
+                                style={{ width: "24px", height: "24px" }}
+                                src={github}
+                                alt=""
+                              />
+                              <p className="text-sm text-white pb-1">backend</p>
+                            </div>
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
