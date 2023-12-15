@@ -29,7 +29,7 @@ const ProjectModal = ({
     <>
       <Dialog>
         <DialogTrigger asChild>
-          <Button className="bg-neutral-50" variant="outline">
+          <Button className="bg-neutral-50" variant="secondary">
             Details
           </Button>
         </DialogTrigger>
