@@ -10,7 +10,7 @@ import {
 const AboutTabs = () => {
   return (
     <>
-      <Tabs defaultValue="Front-End Development" className="w-[400px]">
+      <Tabs defaultValue="Front-End Development" className="w-full">
         <TabsList>
           <TabsTrigger value="Front-End Development">Front-End</TabsTrigger>
           <TabsTrigger value="Back-End Expertise">Back-End</TabsTrigger>
@@ -19,7 +19,10 @@ const AboutTabs = () => {
         </TabsList>
         <TabsContent value="Front-End Development">
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <h3 className="text-xl font-bold">Html</h3>
+            <h3 className="text-xl font-bold">Css</h3>
             <h3 className="text-xl font-bold">Javascript</h3>
+            <h3 className="text-xl font-bold">Typescript</h3>
             <h3 className="text-xl font-bold">React Js</h3>
             <h3 className="text-xl font-bold">Next Js</h3>
             <h3 className="text-xl font-bold">Redux</h3>
@@ -64,6 +67,8 @@ const AboutTabs = () => {
         </TabsContent>
         <TabsContent value="Full-Stack Capabilities">
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <h3 className="text-xl font-bold">Html</h3>
+            <h3 className="text-xl font-bold">Css</h3>
             <h3 className="text-xl font-bold">Javascript</h3>
             <h3 className="text-xl font-bold">ReactJs</h3>
             <h3 className="text-xl font-bold">NextJs</h3>

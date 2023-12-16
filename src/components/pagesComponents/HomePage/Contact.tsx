@@ -100,7 +100,7 @@ const Contact = () => {
                       name="name"
                       placeholder="enter your name"
                       type="text"
-                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-[#252734] border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline text-white"
+                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-[#252734] border border-gray-300 rounded shadow-sm appearance-none focus:border-blue-400 focus:outline-none focus:shadow-outline text-white"
                     />
                     {/* {errors.name && (
                       <i className="text-sm text-red-400">
@@ -123,7 +123,7 @@ const Contact = () => {
                       name="description"
                       required
                       placeholder="description"
-                      className="flex-grow w-full px-4 mb-2 transition duration-200 bg-[#252734] border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline  text-white h-32 resize-none "
+                      className="flex-grow w-full px-4 mb-2 transition duration-200 bg-[#252734] border border-gray-300 rounded shadow-sm appearance-none focus:border-blue-400 focus:outline-none focus:shadow-outline  text-white h-32 resize-none "
                     />
                     {/* {errors.description && (
                       <i className="text-sm text-red-400">
@@ -145,7 +145,7 @@ const Contact = () => {
                       required
                       placeholder="enter your email"
                       type="text"
-                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-[#252734] border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline text-white"
+                      className="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-[#252734] border border-gray-300 rounded shadow-sm appearance-none focus:border-blue-400 focus:outline-none focus:shadow-outline text-white"
                     />
                     {/* {errors.email && (
                       <i className="text-sm text-red-400">
@@ -156,7 +156,7 @@ const Contact = () => {
                   <div className="mt-4 mb-2 sm:mb-4">
                     <button
                       type="submit"
-                      className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-[#252734] focus:shadow-outline focus:outline-none"
+                      className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-[#252734] focus:shadow-outline focus:outline-none border hover:border-none"
                     >
                       Sent
                     </button>

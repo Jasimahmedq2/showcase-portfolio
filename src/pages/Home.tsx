@@ -8,19 +8,19 @@ import { Toaster } from "@/components/ui/toaster";
 const HomePage = () => {
   return (
     <div>
-      <div>
+      <div className="sm:pt-8 sm:pb-8">
         <Banner />
       </div>
-      <div>
+      <div className="sm:pt-8 sm:pb-8">
         <About />
       </div>
-      <div>
+      <div className="sm:pt-8 sm:pb-8">
         <Projects />
       </div>
-      <div>
+      <div className="sm:pt-8 sm:pb-8">
         <Contact />
       </div>
-      <div>
+      <div className="sm:pt-8 sm:pb-8">
         <Footer />
       </div>
       <Toaster />

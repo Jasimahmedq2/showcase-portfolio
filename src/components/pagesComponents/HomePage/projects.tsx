@@ -14,7 +14,7 @@ const Projects = () => {
   return (
     <div
       id="project"
-      className="pt-8 pb-6 sm:pt-16 sm:pl-8 pr-4 pl-4 mt-80 sm:mt-16"
+      className="pt-8 pb-6 sm:pt-16 sm:pl-8 pr-4 pl-4 sm:mt-16"
     >
       <h1 className="text-2xl sm:text-6xl font-bold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text uppercase">
         Recent Projects

@@ -4,6 +4,7 @@ import { useDrag } from "react-use-gesture";
 import leftArrow from "../../../assets/curved-arrow.png";
 import "./About.css";
 import AboutTabs from "../AboutTabs";
+import CodingExperience from "./codingExperience";
 // const cards = [
 //   "https://upload.wikimedia.org/wikipedia/commons/f/f5/RWS_Tarot_08_Strength.jpg",
 //   "https://upload.wikimedia.org/wikipedia/commons/5/53/RWS_Tarot_16_Tower.jpg",
@@ -106,11 +107,8 @@ const About = () => {
   });
 
   return (
-    <div
-      id="about"
-      className="sm:pt-12 pt-8 pl-4 sm:pl-8 pr-4  sm:min-h-[800px]"
-    >
-      <h1 className="text-2xl sm:text-6xl font-bold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text uppercase">
+    <div id="about" className="sm:pt-12 pt-8 sm:pl-8 pr-4  sm:min-h-[800px]">
+      <h1 className="text-2xl sm:text-6xl font-bold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text uppercase pl-8 sm:pl-0">
         About Me
       </h1>
       <div className="flex items-center justify-center mt-12 p-4">
@@ -121,7 +119,7 @@ const About = () => {
           data-aos-duration="2000"
           data-aos-easing="ease-in-out"
           data-aos-mirror="true"
-          className=" w-1/2 p-4"
+          className="w-1/2 p-4 hidden sm:block"
         >
           <img
             className="w-44 h-44 hidden sm:block"
@@ -130,7 +128,34 @@ const About = () => {
           />
           {props.map(({ x, y, rot, scale }, i) => (
             <animated.div
-              className="deck mt-72 sm:mt-0"
+              className="deck mt-96 sm:mt-0"
+              key={i}
+              style={{ x, y }}
+            >
+              {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
+              <animated.div
+                {...bind(i)}
+                style={{
+                  transform: interpolate([rot, scale], trans),
+                  backgroundImage: `url(${cards[i]})`,
+                }}
+              />
+            </animated.div>
+          ))}
+          <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 sm:inline-block text-transparent bg-clip-text uppercase hidden ">
+            Skills
+          </h1>
+        </div>
+        {/* hidden for small devices */}
+        <div className="w-1/2 p-4 sm:hidden">
+          <img
+            className="w-44 h-44 hidden sm:block"
+            src={leftArrow}
+            alt="icon"
+          />
+          {props.map(({ x, y, rot, scale }, i) => (
+            <animated.div
+              className="deck mt-96 sm:mt-0"
               key={i}
               style={{ x, y }}
             >
@@ -171,6 +196,10 @@ const About = () => {
             <AboutTabs />
           </div>
         </div>
+      </div>
+      {/* coding experience */}
+      <div className="sm:pt-12 pb-12">
+        <CodingExperience />
       </div>
     </div>
   );

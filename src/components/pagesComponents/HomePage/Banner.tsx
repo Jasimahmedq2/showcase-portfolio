@@ -22,7 +22,7 @@ const Banner = () => {
       id="home"
     >
       <div className="pl-8 pr-4  mx-auto">
-        <div className="sm:flex justify-between items-center sm:h-screen">
+        <div className="sm:flex justify-between items-center sm:h-[800px]">
           <div className="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
             <div className="max-w-xl mb-6">
               <div className="pb-4 h-20">
@@ -53,7 +53,7 @@ const Banner = () => {
                 data-aos-easing="ease-in-out"
                 data-aos-mirror="true"
                 data-aos-once="false"
-                className="text-base text-white md:text-lg pt-8 lg:pt-16"
+                className="text-base text-white md:text-lg pt-10 lg:pt-16"
               >
                 Seasoned Web Developer adept in crafting dynamic, responsive
                 applications with React, Next.js, and Redux, leveraging strong
@@ -61,47 +61,52 @@ const Banner = () => {
                 Committed to transforming concepts into exceptional,
                 high-performance web solutions.
               </p>
-              <div className="pt-6 sm:pt-12 lg-pt-12">
-                <a href={resume} download="jasim_resume">
-                  <button className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition duration-300 ease-in-out">
-                    Download Resume
-                  </button>
-                </a>
-              </div>
-              <div className="flex space-x-12 items-center sm:pt-16 pt-8">
-                <a href="https://github.com/Jasimahmedq2" target="_blank">
-                  <div>
-                    <Button
-                      className="bg-[#252734]"
-                      variant="outline"
-                      size="icon"
-                    >
-                      <FaGithub className="text-blue-400 text-2xl" />
-                    </Button>
-                  </div>
-                </a>
-                <a href="https://www.linkedin.com/in/jasim4148/" target="_blank">
-                  <div>
-                    <Button
-                      className="bg-[#252734]"
-                      variant="outline"
-                      size="icon"
-                    >
-                      <CiLinkedin className="text-blue-400 text-2xl" />
-                    </Button>
-                  </div>
-                </a>
-                <a href="https://www.facebook.com/jasim4148" target="_blank">
-                  <div>
-                    <Button
-                      className="bg-[#252734]"
-                      variant="outline"
-                      size="icon"
-                    >
-                      <CiFacebook className="text-blue-400 text-2xl" />
-                    </Button>
-                  </div>
-                </a>
+              <div className="hidden sm:block">
+                <div className="pt-6 sm:pt-12 lg-pt-12">
+                  <a href={resume} download="jasim_resume">
+                    <button className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition duration-300 ease-in-out">
+                      Download Resume
+                    </button>
+                  </a>
+                </div>
+                <div className="flex space-x-12 items-center sm:pt-20 pt-8">
+                  <a href="https://github.com/Jasimahmedq2" target="_blank">
+                    <div>
+                      <Button
+                        className="bg-[#252734]"
+                        variant="outline"
+                        size="icon"
+                      >
+                        <FaGithub className="text-blue-400 text-2xl" />
+                      </Button>
+                    </div>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/jasim4148/"
+                    target="_blank"
+                  >
+                    <div>
+                      <Button
+                        className="bg-[#252734]"
+                        variant="outline"
+                        size="icon"
+                      >
+                        <CiLinkedin className="text-blue-400 text-2xl" />
+                      </Button>
+                    </div>
+                  </a>
+                  <a href="https://www.facebook.com/jasim4148" target="_blank">
+                    <div>
+                      <Button
+                        className="bg-[#252734]"
+                        variant="outline"
+                        size="icon"
+                      >
+                        <CiFacebook className="text-blue-400 text-2xl" />
+                      </Button>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -126,6 +131,50 @@ const Banner = () => {
               ?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500"
                 alt=""
               />
+            </div>
+          </div>
+          <div className="sm:hidden flex justify-between items-center py-6">
+            <div className="pt-6 sm:pt-12 lg-pt-12">
+              <a href={resume} download="jasim_resume">
+                <button className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-semibold py-2 px-4 rounded-full shadow-md transition duration-300 ease-in-out">
+                  Download Resume
+                </button>
+              </a>
+            </div>
+            <div className="flex space-x-4 sm:space-x-12 items-center sm:pt-16 pt-8">
+              <a href="https://github.com/Jasimahmedq2" target="_blank">
+                <div>
+                  <Button
+                    className="bg-[#252734]"
+                    variant="outline"
+                    size="icon"
+                  >
+                    <FaGithub className="text-blue-400 text-2xl" />
+                  </Button>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/jasim4148/" target="_blank">
+                <div>
+                  <Button
+                    className="bg-[#252734]"
+                    variant="outline"
+                    size="icon"
+                  >
+                    <CiLinkedin className="text-blue-400 text-2xl" />
+                  </Button>
+                </div>
+              </a>
+              <a href="https://www.facebook.com/jasim4148" target="_blank">
+                <div>
+                  <Button
+                    className="bg-[#252734]"
+                    variant="outline"
+                    size="icon"
+                  >
+                    <CiFacebook className="text-blue-400 text-2xl" />
+                  </Button>
+                </div>
+              </a>
             </div>
           </div>
         </div>

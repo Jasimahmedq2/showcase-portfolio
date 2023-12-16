@@ -29,7 +29,7 @@ const ProjectModal = ({
     <>
       <Dialog>
         <DialogTrigger asChild>
-          <Button className="bg-neutral-50" variant="secondary">
+          <Button className="bg-[#252734] text-white" variant="outline">
             Details
           </Button>
         </DialogTrigger>
@@ -42,12 +42,12 @@ const ProjectModal = ({
             />
           </a>
           <DialogHeader>
-            <DialogTitle>{project?.name}</DialogTitle>
+            <DialogTitle className="text-white">{project?.name}</DialogTitle>
             <DialogDescription>
-              <h5 className="pt-2 pb-2 text-black text-md">
+              <h5 className="pt-2 pb-2 text-white text-md">
                 Technologies: {project?.technologies}
               </h5>
-              <p>{project?.description}</p>
+              <p className="text-white">{project?.description}</p>
               <div className="flex items-center justify-around space-x-3 pt-8">
                 <a href={project?.live_link} target="_blank">
                   <div className="cursor-pointer">
@@ -61,7 +61,7 @@ const ProjectModal = ({
                       alt=""
                     />
 
-                    <p className="text-sm text-black pb-1">live</p>
+                    <p className="text-sm text-white pb-1">live</p>
                   </div>
                 </a>
                 {project?.frontend_code && (
@@ -76,7 +76,7 @@ const ProjectModal = ({
                         src={github}
                         alt=""
                       />
-                      <p className="text-sm text-black pb-1">frontend</p>
+                      <p className="text-sm text-white pb-1">frontend</p>
                     </div>
                   </a>
                 )}
@@ -92,7 +92,7 @@ const ProjectModal = ({
                         src={github}
                         alt=""
                       />
-                      <p className="text-sm text-black pb-1">backend</p>
+                      <p className="text-sm text-white pb-1">backend</p>
                     </div>
                   </a>
                 )}
