@@ -154,7 +154,6 @@ const Contact = () => {
                     )} */}
                   </div>
                   <div className="mt-4 mb-2 sm:mb-4">
-
                     <button className="flex items-center relative w-36 border-2 border-gray-300 text-sky-500 p-4 rounded-lg group">
                       <span>Submit</span>
                       <span className="absolute w-1/6 right-3 group-hover:w-5/6 box-content duration-300 flex justify-center bg-[#256ddc] rounded-lg">

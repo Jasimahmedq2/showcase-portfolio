@@ -8,7 +8,7 @@ import { Toaster } from "@/components/ui/toaster";
 const HomePage = () => {
   return (
     <div>
-      <div className="sm:pt-8 sm:pb-8">
+      <div className="sm:pb-8">
         <Banner />
       </div>
       <div className="sm:pt-8 sm:pb-8">
