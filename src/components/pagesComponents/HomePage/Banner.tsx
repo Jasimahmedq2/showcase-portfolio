@@ -2,7 +2,7 @@ import { TypeAnimation } from "react-type-animation";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import backgroundImage from "../../../assets/banner_backround.png";
-import resume from "../../../assets/jasim-resume (2).pdf";
+import resume from "../../../assets/jasim_resume.pdf";
 import "./Banner.css";
 import { Button } from "@/components/ui/button";
 import { FaGithub } from "react-icons/fa";

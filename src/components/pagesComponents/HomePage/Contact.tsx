@@ -15,7 +15,7 @@ const Contact = () => {
       emailjs
         .sendForm(
           "service_k0ndvhj",
-          "template_ydc029l",
+          "template_s78ixxa",
           form.current,
           "YgRulTmORe8ZYcETe"
         )
@@ -91,7 +91,7 @@ const Contact = () => {
                       htmlFor="firstName"
                       className="inline-block mb-1 font-medium text-white"
                     >
-                      name
+                      Name
                     </label>
                     <input
                       //   {...register("name", { required: "name is required" })}
@@ -105,29 +105,6 @@ const Contact = () => {
                     {/* {errors.name && (
                       <i className="text-sm text-red-400">
                         {errors.name.message}
-                      </i>
-                    )} */}
-                  </div>
-                  <div className="mb-1 sm:mb-2">
-                    <label
-                      htmlFor="lastName"
-                      className="inline-block mb-1 font-medium text-white"
-                    >
-                      description
-                    </label>
-                    <textarea
-                      //   {...register("description", {
-                      //     required: "description is required",
-                      //   })}
-                      //   area-invalid={errors.description ? "true" : "false"}
-                      name="description"
-                      required
-                      placeholder="description"
-                      className="flex-grow w-full px-4 mb-2 transition duration-200 bg-[#252734] border border-gray-300 rounded shadow-sm appearance-none focus:border-blue-400 focus:outline-none focus:shadow-outline  text-white h-32 resize-none "
-                    />
-                    {/* {errors.description && (
-                      <i className="text-sm text-red-400">
-                        {errors.description.message}
                       </i>
                     )} */}
                   </div>
@@ -153,12 +130,57 @@ const Contact = () => {
                       </i>
                     )} */}
                   </div>
-                  <div className="mt-4 mb-2 sm:mb-4">
-                    <button
-                      type="submit"
-                      className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-[#252734] focus:shadow-outline focus:outline-none border hover:border-none"
+                  <div className="mb-1 sm:mb-2">
+                    <label
+                      htmlFor="lastName"
+                      className="inline-block mb-1 font-medium text-white"
                     >
-                      Sent
+                      Message
+                    </label>
+                    <textarea
+                      //   {...register("description", {
+                      //     required: "description is required",
+                      //   })}
+                      //   area-invalid={errors.description ? "true" : "false"}
+                      name="description"
+                      required
+                      placeholder="message..."
+                      className="flex-grow w-full px-4 mb-2 transition duration-200 bg-[#252734] border border-gray-300 rounded shadow-sm appearance-none focus:border-blue-400 focus:outline-none focus:shadow-outline  text-white h-32 resize-none "
+                    />
+                    {/* {errors.description && (
+                      <i className="text-sm text-red-400">
+                        {errors.description.message}
+                      </i>
+                    )} */}
+                  </div>
+                  <div className="mt-4 mb-2 sm:mb-4">
+
+                    <button className="flex items-center relative w-36 border-2 border-gray-300 text-sky-500 p-4 rounded-lg group">
+                      <span>Submit</span>
+                      <span className="absolute w-1/6 right-3 group-hover:w-5/6 box-content duration-300 flex justify-center bg-[#256ddc] rounded-lg">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          className="w-10"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                          <g
+                            id="SVGRepo_tracerCarrier"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          ></g>
+                          <g id="SVGRepo_iconCarrier">
+                            <path
+                              d="M4 12H20M20 12L14 6M20 12L14 18"
+                              stroke="#0ea5e9"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            ></path>
+                          </g>
+                        </svg>
+                      </span>
                     </button>
                   </div>
                 </form>
